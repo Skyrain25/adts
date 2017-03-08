@@ -16,12 +16,11 @@ class List //begin List definition
   public:
      ~List();//destructor
      void insert(int element, int k);//insert element at location k
+     int getAt (int k);
      void remove(int k);//remove element at location k
      int size();//return the number of elements in the List
-     
-     
-     /** MISSING OPERATIONS */
-     //... fill in ....
+     void display();
+    
 
 };//end List definition
 

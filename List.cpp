@@ -37,6 +37,7 @@ void List::insert(int val, int k)
 	
 	if(k == 1)
 	{
+	
 	  newPtr->link = frontPtr;
 	  frontPtr = newPtr;
 	 }
@@ -93,3 +94,26 @@ void List::remove(int k)
 	
 	//Implementations of missing operations
 	
+
+int List::getAt (int k)
+{
+	if (k < 1 or k > num_elements) //if the location is invalid
+	{
+		cout << "Invalid Position! Returning zero: ";
+		return 0;
+	}
+	Node* tmpPtr = frontPtr;
+	for (int i=1; i<k; i++)
+	{
+		 tmpPtr = tmpPtr->link;
+	}
+	return tmpPtr->data;
+}
+
+void List::display()
+{
+	 for (Node* cutPtr=frontPtr; cutPtr!=0; cutPtr=cutPtr->link)
+	  {
+		  cout << cutPtr->data << " ";
+	  }
+}
